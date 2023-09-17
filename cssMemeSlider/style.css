@@ -134,6 +134,7 @@ input {
 .text-block {
 overflow: hidden;
 padding-left: 1%;
+padding-top: 0.5%;
 }
 .text {
     display: flex;
