@@ -10,17 +10,21 @@
     display: flex;
     justify-content: center;
     background-color: #001933;
+    padding-right: 2rem;
+    padding-left: 2rem;
 }
 
 .container {
-    font-family: 'Anonymous Pro', monospace;
-    line-height: 2;
-    max-width: 42rem ;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    max-width: 37rem ;
     overflow: hidden;
     scroll-behavior: smooth;
     box-shadow: 0 1.5rem 4rem -0.75rem hsla(0, 0%, 0%, 0.25);
     margin-top: 4rem;
     border-radius: 0.7rem;
+
   }
 
 
@@ -32,6 +36,7 @@
     width: 100%;
     height: 25rem;
     transition: all 0.2s ease;
+    height: auto;
 }
 
 
@@ -42,9 +47,7 @@
 
 .radio-buttons {
     display: flex;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    align-items: center;
+    height: 50%;
 }
 .radio-buttons label {
     padding: 0.5rem;
@@ -126,27 +129,68 @@ input {
     color: #fff;
     flex-direction: row-reverse;
     justify-content: space-between;
+    margin-top: 2rem;
 }
 .text-block {
 overflow: hidden;
-padding-left: 1rem;
+padding-left: 1%;
 }
 .text {
     display: flex;
     width: 100%;
     height: 100%;
-    align-items: center;
+    align-items: flex-start;
     margin: 0;
+    transition: all 0.3s ease;
+    opacity: 0;
 }
-#radio1:checked ~ .block .text-block .text{
+#radio1:checked ~ .block .text-block .text1{
     transform: translateY(0);
+    opacity: 1;
     }
-    #radio2:checked ~ .block .text-block .text{
+    #radio2:checked ~ .block .text-block .text2{
         transform: translateY(-100%);
+        opacity: 1;
         }
-        #radio3:checked ~ .block .text-block .text{
+        #radio3:checked ~ .block .text-block .text3{
             transform: translateY(-200%);
+            opacity: 1;
             }
-            #radio4:checked ~ .block .text-block .text{
+            #radio4:checked ~ .block .text-block .text4{
                 transform: translateY(-300%);
+                opacity: 1;
                 }
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+@media (max-width: 550px) {
+    .container {
+        max-width: 27rem;
+    }
+    .block {
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .radio-buttons {
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        height: 20%;
+    }
+    img {
+        height: auto;
+    }
+    .text {
+    align-items: flex-start;
+    }
+    .text-block {
+        padding-right: 1rem;
+    }
+}
